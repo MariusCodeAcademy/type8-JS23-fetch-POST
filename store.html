@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+    <title>Document</title>
+    <script src="./js/store.js"></script>
+  </head>
+  <body>
+    <h1>Add new Product</h1>
+    <!-- sukurti forma kuriios pagal nusiusim naujo produkto sukurimo uzklausa -->
+    <form>
+      <input type="text" name="title" placeholder="Title" />
+      <input type="number" min="0" step="0.01" name="price" placeholder="Price" />
+      <input type="text" name="description" placeholder="Description" />
+      <input type="url" name="image" placeholder="Image" />
+      <input type="text" name="category" placeholder="Category" />
+      <button type="submit">create</button>
+    </form>
+    <!-- title: 'test product',
+        price: 13.5,
+        description: 'lorem ipsum set',
+        image: 'https://i.pravatar.cc',
+        category: 'electronic' -->
+  </body>
+</html>
