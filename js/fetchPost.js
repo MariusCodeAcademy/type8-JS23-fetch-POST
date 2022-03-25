@@ -32,14 +32,36 @@ formEl.addEventListener('submit', (e) => {
     .then((ats) => {
       // sekmingas sukurimas
       formEl.reset();
-      showSuccessAlert();
+      showAlert('Postas sukurtas');
     })
-    .catch((err) => console.log(err.message));
+    .catch((err) => {
+      console.log(err.message);
+      showAlert('Klaida, Postas nesukurtas', 'fail');
+    });
 });
 
 // 4. surinkit inputu reiksmes ir sudeti i objekta
 
 // 5. siusti naujo post duomenis su fetch
-function showSuccessAlert() {
+function showAlert(msg, tipas) {
+  // <h3 class="alert">Postas sukurtas</h3>
   // parodyti laikinai sekmes pranesima
+  const alertEl = document.createElement('h3');
+  const extraClass = tipas === 'fail' ? 'danger' : '';
+  alertEl.className = 'alert ' + extraClass;
+  alertEl.textContent = msg;
+  document.body.prepend(alertEl);
+  setTimeout(() => {
+    alertEl.remove();
+  }, 3000);
 }
+// function showFailAlert() {
+//   // parodyti pranesima
+//   const alertEl = document.createElement('h3');
+//   alertEl.className = 'alert danger';
+//   alertEl.textContent = 'Klaida, Postas nesukurtas';
+//   document.body.prepend(alertEl);
+//   setTimeout(() => {
+//     alertEl.remove();
+//   }, 3000);
+// }
